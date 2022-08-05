@@ -13,7 +13,7 @@ typedef const char* (*GetModuleValue)();
 **/
 typedef const char* (*GetTrayIcon)();
 /**
- * Container for function run when a tray clickable block is clicked 
+ * Container for function run when a tray clickable block is clicked
 **/
 typedef void (*ClickAction)();
 /**
@@ -23,13 +23,12 @@ typedef void (*ClickAction)();
 **/
 typedef char (*TrayClickAction)();
 
-/** @struct block
+/** @struct Block
  *  @breif hold all information for a single bar block
- *  @var block::signal stores the signal number assigned to the block,
+ *  @var Block::signal stores the signal number assigned to the block,
  *  used to update it (e.g called from hook)
- *  @var block::value pointer to the update function, returning the new block value
- *  @var block::alt
- *  Backup text if the value cannot be loaded (e.g script faliure)
+ *  @var Block::value pointer to the update function, returning the new block value
+ *  @var Block::alt backup text if the value cannot be loaded (e.g script faliure)
  *
 **/
 typedef struct {
@@ -41,10 +40,10 @@ typedef struct {
     char* alt[16];
 } Block;
 
-/** @struct clickableblock
+/** @struct ClickableBlock
  *  @breif bar block with a click action
- *  @var clickableblock::block bar block object that is displayed
- *  @var clickableblock::action pointer to the action function, called when the
+ *  @var ClickableBlock::block bar block object that is displayed
+ *  @var ClickableBlock::action pointer to the action function, called when the
  *  block is clicked
 **/
 typedef struct {
@@ -52,11 +51,11 @@ typedef struct {
     ClickAction action;
 } ClickableBlock;
 
-/** @struct tray
+/** @struct Tray
  *  @breif single icon with a click action
- *  @var tray::signal stores the signal number assigned to the block,
+ *  @var Tray::signal stores the signal number assigned to the block,
  *  used to update it (e.g called from hook)
- *  @var tray::action pointer to the action function, called when the tray is
+ *  @var Tray::action pointer to the action function, called when the tray is
  *  clicked and updates the tray icon immediately
 **/
 typedef struct {
